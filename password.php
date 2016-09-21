@@ -59,6 +59,6 @@
 			$_SESSION['password']=$password;
 		}
 		generatepw($numberofwords,$number,$symbol);
-		header("Location: index.php"); /* Redirect browser */
+		header("Location: http://p2.stevengolden.me/"); /* Redirect browser */
 		exit();
 ?>

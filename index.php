@@ -17,17 +17,19 @@ ini_set('display_errors', 1); # Display errors on page (instead of a log file)
 		<h2>Secure Password Generator</h2>
 		<h4>Inspired by the xkcd comic 936: <a href="http://xkcd.com/936/"> Password Strength</a></h4>
 		<br>
-		<p class="password">
-			<?php
-				if(isset($_SESSION['password'])){
-					$password=$_SESSION['password'];	
-				}
-				else{
-					$password="Lima-Jaguar-Mike-Echo";
-				}
-				echo $password;
-			 ?>
-		 </p>
+		<div class="pw">
+			<p class="password">
+				<?php
+					if(isset($_SESSION['password'])){
+						$password=$_SESSION['password'];	
+					}
+					else{
+						$password="Lima-Jaguar-Mike-Echo";
+					}
+					echo $password;
+				 ?>
+			 </p>
+		</div>
 		<p class="isnumber">
 			<?php
 				if(isset($_SESSION['isnumber'])){
@@ -44,15 +46,15 @@ ini_set('display_errors', 1); # Display errors on page (instead of a log file)
 		<div class="form-group">
 			<form method ="POST" action="password.php">
 					<label for="number-of-words">How many Words?</label>
-					<input maxlength=1 class="text" type="text" name="number-of-words" id="number-of-words" value="">  (Maximum of <strong><ins>9</ins></strong>)
+					<input maxlength=1 class="text" type="text" name="number-of-words" id="number-of-words" value="4">  (Maximum of <strong><ins>9</ins></strong>)
 					<br>
 					<div class="checkbox">
 						<label>
-							<input type="checkbox" name="number">Include a number
+							<input type="checkbox" name="number" checked>Include a number
 						</label>
 						<br>
 						<label style="padding-right:7px;">
-							<input type="checkbox" name="symbol">Include a symbol
+							<input type="checkbox" name="symbol" checked>Include a symbol
 						</label>
 					</div>
 

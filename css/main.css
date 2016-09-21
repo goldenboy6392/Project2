@@ -23,10 +23,10 @@ body{
 	border-radius: 20px;
 	background-color: #d3d3d3;
 	color: #330C5D;
-	display: block;
 	overflow: auto;
 	margin: auto;
-	width: 40%;
+	padding-left: 10px;
+	padding-right: 10px; 
 }
 .xkcd{
 max-width: 100%;
@@ -36,4 +36,7 @@ border-top: 2px solid black;
 border-bottom: 3px solid black;
 border-right: 2px solid black;
 border-radius: 35px;
+}
+.pw{
+	display: inline-block;
 }
