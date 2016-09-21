@@ -41,7 +41,6 @@
 		</p>
 		<div class="form-group">
 			<form method ="POST" action="password.php">
-				<p class="options">
 					<label for="number-of-words">How many Words?</label>
 					<input maxlength=1 class="text" type="text" name="number-of-words" id="number-of-words" value="">  (Maximum of <strong><ins>9</ins></strong>)
 					<br>
@@ -54,7 +53,6 @@
 							<input type="checkbox" name="symbol">Include a symbol
 						</label>
 					</div>
-				</p>
 
 				<input type='submit' name='submit' class='btn btn-default' value='Generate A New Password'>
 				
