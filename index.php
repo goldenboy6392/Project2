@@ -1,48 +1,32 @@
 <?php session_start();
 ?>
-
 <!DOCTYPE html>
+<html lang="en">
 <head>
 <title>P2 Password Generator</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <meta charset="utf-8">
-<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+<link href='//netdna.bootstrapcdn.com/bootswatch/3.3.7/flatly/bootstrap.min.css' rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="css/main.css">
 </head>
 
 <body>
 	<div class="container">
 		<h2>Secure Password Generator</h2>
 		<h4>Inspired by the xkcd comic 936: <a href="http://xkcd.com/936/"> Password Strength</a></h4>
-
+		<br>
 		<p class="password">
-		<?php
-			if(isset($_SESSION['password'])){
-				$password=$_SESSION['password'];	
-			}
-			else{
-				$password="Lima-Jaguar-Mike-Echo";
-			}
-		echo $password;
-		 ?>
+			<?php
+				if(isset($_SESSION['password'])){
+					$password=$_SESSION['password'];	
+				}
+				else{
+					$password="Lima-Jaguar-Mike-Echo";
+				}
+				echo $password;
+			 ?>
 		 </p>
-
-		<form method ="POST" action="password.php">
-			<p class="options">
-			<label for="number-of-words"> How many Words?</label>
-			<input maxlength=1 type="text" name="number-of-words" id="number-of-words" value=""> (Maximum of 9)
-			<br>
-
-			<input type="checkbox" name='number' id="number">
-			<label for='number'>Include a number</label>
-			<br>
-			<input type="checkbox" name="symbol" id="symbol" >
-			<label for="symbol">Include a symbol</label>
-			</p>
-
-			<input type='submit' name='submit' class='btn btn-default' value='Generate A New Password'>
-			
-			</form>
-			<br>
-			<p class="isnumber">
+		<p class="isnumber">
 			<?php
 				if(isset($_SESSION['isnumber'])){
 					$isnumber=$_SESSION['isnumber'];	
@@ -54,6 +38,30 @@
 			echo $isnumber;
 			session_unset();
 			?>
-			</p></div>
+		</p>
+		<div class="form-group">
+			<form method ="POST" action="password.php">
+				<p class="options">
+					<label for="number-of-words">How many Words?</label>
+					<input maxlength=1 class="text" type="text" name="number-of-words" id="number-of-words" value="">  (Maximum of <strong><ins>9</ins></strong>)
+					<br>
+					<div class="checkbox">
+						<label>
+							<input type="checkbox" name="number">Include a number
+						</label>
+						<br>
+						<label style="padding-right:7px;">
+							<input type="checkbox" name="symbol">Include a symbol
+						</label>
+					</div>
+				</p>
 
+				<input type='submit' name='submit' class='btn btn-default' value='Generate A New Password'>
+				
+			</form>
+		</div>
+
+		<img class='xkcd' src='http://imgs.xkcd.com/comics/password_strength.png' alt='xkcd style passwords'>
+	</div>
 </body>
+</html>

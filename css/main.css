@@ -1,0 +1,39 @@
+body{
+	background-color: #F0F0F0;
+}
+
+.container {
+    text-align:center;
+}
+
+.text{
+	width:1.5em;
+	text-align: center;
+}
+.invalid{
+	color: red;
+	font-weight: bold;
+	text-decoration: underline;
+}
+.password{
+	font-size:2em;
+	font-weight: bold;
+	text-align: center;
+	border: 2px solid grey;
+	border-radius: 20px;
+	background-color: #d3d3d3;
+	color: #330C5D;
+	display: block;
+	overflow: auto;
+	margin: auto;
+	width: 40%;
+}
+.xkcd{
+max-width: 100%;
+max-height: 100%;
+border-left: 2px solid black;
+border-top: 2px solid black;
+border-bottom: 3px solid black;
+border-right: 2px solid black;
+border-radius: 35px;
+}
