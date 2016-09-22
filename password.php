@@ -36,7 +36,7 @@
 			$symbol=0;
 		}
 
-		if($_POST['number-of-words'] =="" || !is_numeric($_POST['number-of-words']) || $_POST['number-of-words'] > 9 || $_POST['number-of-words'] < 0 || !checkNumlength() ) {
+		if($_POST['number-of-words'] =="" || !is_numeric($_POST['number-of-words']) || $_POST['number-of-words'] > 9 || $_POST['number-of-words'] < 0 || !checkNumlength())  {
 			$numberofwords=4;
 			$_SESSION['isnumber']="<p class='invalid'>Invalid Number. Defaulting to 4 word long password.<p>";
 		}
@@ -68,6 +68,6 @@
 			$_SESSION['password']=$password;
 		}
 		generatepw($numberofwords,$number,$symbol);
-		header("Location: http://p2.stevengolden.me/"); /* Redirect browser */
+		header("Location: http://p2.stevengolden.me"); /* Redirect browser */
 		exit();
 ?>
