@@ -6,6 +6,17 @@
 
 	$symboldictionary = ['*','`','~','!','@','#','$','%','^','&','*','(',')','-','_','=','+','[',']','{','}','|',':',';','<','>','/','?','.',','];
 
+	function checkNumlength{
+		$length=strlen($_POST['number-of-words']);
+		if ($length > 1 ){
+			return FALSE;
+		}
+		else{
+			return TRUE;
+		}
+
+	}
+
 	if(!isset($_POST['submit'])){
 		echo "<h1>Error</h1>\n
     		<p>Accessing this page directly is not allowed.</p>";
@@ -25,7 +36,7 @@
 			$symbol=0;
 		}
 
-		if($_POST['number-of-words'] =="" || !is_numeric($_POST['number-of-words'])) {
+		if($_POST['number-of-words'] =="" || !is_numeric($_POST['number-of-words']) || $_POST['number-of-words'] > 9 || $_POST['number-of-words'] < 0 || !checkNumlength() ) {
 			$numberofwords=4;
 			$_SESSION['isnumber']="<p class='invalid'>Invalid Number. Defaulting to 4 word long password.<p>";
 		}
@@ -40,7 +51,6 @@
 			for ($i = 0; $i <= $words; $i++) {
 				$temp[$i] =$dictionary[rand(0,sizeof($dictionary)-1)];
 			}
-
 			if($words== 0){
 				$password="";
 			}else{
@@ -49,7 +59,6 @@
 				$password=$password . "-". $temp[$j];
 				}
 			}
-
 			if($numbers==1){
 				$password=$password.$numberdictionary[rand(0,sizeof($numberdictionary)-1)];
 			}
