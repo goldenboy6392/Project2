@@ -6,7 +6,7 @@
 
 	$symboldictionary = ['*','`','~','!','@','#','$','%','^','&','*','(',')','-','_','=','+','[',']','{','}','|',':',';','<','>','/','?','.',','];
 
-	function checkNumlength{
+	function checkNumlength(){
 		$length=strlen($_POST['number-of-words']);
 		if ($length > 1 ){
 			return FALSE;
